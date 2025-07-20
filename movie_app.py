@@ -44,6 +44,7 @@ user_option = {
     "f" : find_movie
 }
 
+
 def menu():
     selection = input(MENU_PROMPT)
 
