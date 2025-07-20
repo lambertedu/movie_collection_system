@@ -16,8 +16,11 @@ def add_movie():
 
 
 def list_movie():
-    for movie in movies:
-        print_movie(movie)
+    if not movies:
+        print("No movies in the list.\n")
+    else:
+        for movie in movies:
+            print_movie(movie)
 
 
 def find_movie():
@@ -49,13 +52,6 @@ def menu():
         if  selection in user_option:
             selection_functon = user_option[selection]
             selection_functon()
-        # if selection == 'a':
-        #     add_movie()
-        # elif selection == 'l':
-        #     list_movie()
-
-        # elif selection == 'f':
-        #     find_movie()
         else:
             print("Invalid selection. Try again\n")
         selection = input(MENU_PROMPT)
