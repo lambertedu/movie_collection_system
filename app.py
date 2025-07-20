@@ -35,18 +35,27 @@ def print_movie(movie):
     print(
         f"Title: {movie['title']}\nDirector: {movie['director']}\nYear: {movie['year']}\n")
 
+user_option = {
+    "a" : add_movie,
+    "l" : list_movie,
+    "f" : find_movie
+}
 
 def menu():
     selection = input(MENU_PROMPT)
 
     while selection != 'q':
-        if selection == 'a':
-            add_movie()
-        elif selection == 'l':
-            list_movie()
+        
+        if  selection in user_option:
+            selection_functon = user_option[selection]
+            selection_functon()
+        # if selection == 'a':
+        #     add_movie()
+        # elif selection == 'l':
+        #     list_movie()
 
-        elif selection == 'f':
-            find_movie()
+        # elif selection == 'f':
+        #     find_movie()
         else:
             print("Invalid selection. Try again\n")
         selection = input(MENU_PROMPT)
